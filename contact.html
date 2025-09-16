@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact</title>
+  <!-- GTM head snippet -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0], j=d.createElement(s); j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i;
+  f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <main style="max-width:700px;margin:40px auto;font-family:Arial,Helvetica,sans-serif">
+    <h1>Contact</h1>
+
+    <form id="contact-form">
+      <label>Name: <input type="text" name="name" required></label><br><br>
+      <label>Email: <input type="email" name="email" required></label><br><br>
+      <label>Message:<br><textarea name="message" required></textarea></label><br><br>
+      <button type="submit" id="btn-submit">Send</button>
+    </form>
+
+    <p><a href="index.html">Home</a> | <a href="about.html">About</a></p>
+
+    <script>
+      // Push an explicit dataLayer event on form submit so GTM can catch it
+      document.getElementById('contact-form').addEventListener('submit', function(e){
+        e.preventDefault(); // stop actual submit for demo
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'contact_form_submit',
+          formId: 'contact-form',
+          formName: 'Contact Form'
+        });
+        // show a simple confirmation for demo
+        alert('Form submitted (demo) — dataLayer event pushed.');
+      });
+    </script>
+  </main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Demo Site — About</title>
+  <!-- GTM head snippet (same GTM-XXXXXXX) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0], j=d.createElement(s); j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i;
+  f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <main style="max-width:700px;margin:40px auto;font-family:Arial,Helvetica,sans-serif">
+    <h1>About</h1>
+    <p>This is a demo "about" page.</p>
+    <button id="btn-contact" class="cta">Contact Us</button>
+    <p><a href="index.html">Home</a> | <a href="contact.html">Contact</a></p>
+
+    <script>
+      // small push for demo
+      document.getElementById('btn-contact').addEventListener('click', function(){
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'button_click_custom',
+          button_id: 'btn-contact',
+          button_text: 'Contact Us',
+          page: 'about'
+        });
+      });
+    </script>
+  </main>
+</body>
+</html>
